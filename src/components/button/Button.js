@@ -4,9 +4,9 @@ import "./Button.css";
 
 function Button({ onClick, text, className }) {
   return (
-    <div onClick={onClick} style={{ textAlign: "center" }}>
-      <button className={className}>{text}</button>
-    </div>
+    <button onClick={onClick} className={className}>
+      {text}
+    </button>
   );
 }
 

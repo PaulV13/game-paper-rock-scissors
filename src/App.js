@@ -4,9 +4,10 @@ import Currency from "./components/currency/Currency";
 
 import "./App.css";
 import Button from "./components/button/Button";
+import Rules from "./components/gameRules/Rules";
 
 function App() {
-  const [rules, setRules] = useState("none");
+  const [rules, setRules] = useState("rules-none");
   const [play, setPlay] = useState(false);
   const [pickUser, setPickUser] = useState({});
   const [pickIA, setPickIA] = useState({});
@@ -15,18 +16,17 @@ function App() {
   const [score, setScore] = useState(0);
 
   const elementos = [
-    { name: "rock", color: "#e0405c", shadow: "#9d1636" },
-    { name: "paper", color: "#516bf4", shadow: "#2944c5" },
-    { name: "scissors", color: "#efa329", shadow: "#cd6818" },
+    { name: "rock", className: "currency-red" },
+    { name: "paper", className: "currency-blue" },
+    { name: "scissors", className: "currency-orange" },
   ];
 
-  const pick = async ({ name, shadow, color }) => {
+  const pick = async ({ name, className }) => {
     setPlay(true);
 
     const picker = {
       name,
-      color,
-      shadow,
+      className,
     };
 
     setPickUser(picker);
@@ -85,7 +85,7 @@ function App() {
     if (picker.name === "scissors") {
       if (housePick.name === "rock") {
         if (score > 0) {
-          setScore(score + 1);
+          setScore(score - 1);
         }
         return "LOSE";
       }
@@ -97,11 +97,11 @@ function App() {
   };
 
   const handleRules = () => {
-    setRules("flex");
+    setRules("rules-flex");
   };
 
   const handleCloseRules = () => {
-    setRules("none");
+    setRules("rules-none");
   };
 
   const handlePlayAgain = () => {
@@ -111,56 +111,31 @@ function App() {
 
   return (
     <div className="App">
-      <div
-        className="rules"
-        style={{
-          display: `${rules}`,
-        }}
-      >
-        <h2>RULES</h2>
-        <img className="img-rules" src="./images/image-rules.svg" alt="" />
-        <img
-          className="img-close"
-          src="./images/icon-close.svg"
-          alt=""
-          onClick={handleCloseRules}
-          style={{ cursor: "pointer" }}
-        />
-      </div>
+      <Rules className={rules} onClick={handleCloseRules} />
       <>
         <Score score={score} />
         {play ? (
-          <div className="options">
+          <section>
             <div className="options-currency">
-              <div>
+              <section>
                 <Currency
-                  color={pickUser.color}
-                  shadow={pickUser.shadow}
+                  className={pickUser.className}
                   name={pickUser.name}
                   pick={pick}
-                  style={{
-                    border: `15px solid ${pickUser.color}`,
-                    boxShadow: `0 5px 0 ${pickUser.shadow}`,
-                  }}
                 />
                 <h5>YOU PICKED</h5>
-              </div>
-              <div>
+              </section>
+              <section>
                 <Currency
-                  color={pickIA.color}
-                  shadow={pickIA.shadow}
+                  className={pickIA.className}
                   name={pickIA.name}
                   pick={pick}
-                  style={{
-                    border: `15px solid ${pickIA.color}`,
-                    boxShadow: `0 5px 0 ${pickIA.shadow}`,
-                  }}
                 />
                 <h5>THE HOUSE PICKED</h5>
-              </div>
+              </section>
             </div>
             {showWin ? (
-              <div>
+              <div className="box-result">
                 <h1>YOU {win}</h1>
                 <Button
                   className="play-again"
@@ -171,52 +146,22 @@ function App() {
             ) : (
               ""
             )}
-          </div>
+          </section>
         ) : (
-          <div className="options">
-            <div
-              className="options-currency"
-              style={{
-                backgroundImage: "url(./images/bg-triangle.svg)",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center 60%",
-              }}
-            >
+          <section>
+            <div id="option-currency-triangle" className="options-currency">
+              <Currency className="currency-blue" name="paper" pick={pick} />
               <Currency
-                color="#516bf4"
-                shadow="#2944c5"
-                name="paper"
-                pick={pick}
-                style={{
-                  border: `15px solid #516bf4`,
-                  boxShadow: `0 5px 0 #2944c5`,
-                }}
-              />
-              <Currency
-                color="#efa329"
-                shadow="#cd6818"
+                className="currency-orange"
                 name="scissors"
                 pick={pick}
-                style={{
-                  border: `15px solid #efa329`,
-                  boxShadow: `0 5px 0 #cd6818`,
-                }}
               />
-              <Currency
-                color="#e0405c"
-                shadow="#9d1636"
-                name="rock"
-                pick={pick}
-                style={{
-                  border: `15px solid #e0405c`,
-                  boxShadow: `0 5px 0 #9d1636`,
-                }}
-              />
+              <Currency className="currency-red" name="rock" pick={pick} />
             </div>
-          </div>
+          </section>
         )}
-        <div className="btn-rules">
-          <Button className="rules-btn" text="RULES" onClick={handleRules} />
+        <div className="rules-btn">
+          <Button className="btn-rules" text="RULES" onClick={handleRules} />
         </div>
       </>
     </div>

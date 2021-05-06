@@ -2,19 +2,13 @@ import React from "react";
 
 import "./Currency.css";
 
-function Currency({ name = "", color = "", shadow = "", pick, style }) {
+function Currency({ name = "", className, pick }) {
   const handleClick = () => {
-    pick({ name, color, shadow });
+    pick({ name, className });
   };
 
   return (
-    <div
-      shadow={shadow}
-      color={color}
-      className="currency"
-      style={style}
-      onClick={handleClick}
-    >
+    <div className={className} onClick={handleClick}>
       <div className="box">
         <img src={`./images/icon-${name}.svg`} alt="" />
       </div>

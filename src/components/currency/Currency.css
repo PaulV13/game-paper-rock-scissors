@@ -1,37 +1,74 @@
-.currency{
-  width: 130px;
-  height: 130px;
-  display: flex;
-  border: 15px solid rgb(81, 107, 244);
-  border-radius: 50%;
-  box-sizing: border-box;
+
+.currency-blue{
   background-color: rgb(255, 255, 255);
-  margin: 10px 20px;
+  border-radius: 50%;
+  border: 15px solid #516bf4;
+  box-shadow: 0 5px 0 #2944c5;
+  box-sizing: border-box;
   cursor: pointer;
+  display: flex;
+  height: 130px;
+  margin: 10px 20px;
+  width: 130px;
+}
+
+.currency-orange{
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  border: 15px solid #efa329;
+  box-shadow: 0 5px 0 #cd6818;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  height: 130px;
+  margin: 10px 20px;
+  width: 130px;
+}
+
+.currency-red{
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  border: 15px solid #e0405c;
+  box-shadow: 0 5px 0 #9d1636;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  height: 130px;
+  margin: 10px 20px;
+  width: 130px;
 }
 
 .default{
-  width: 130px;
-  height: 130px;
   background-color: #192845;
   border-radius: 50%;
+  height: 130px;
+  width: 130px;
 }
 
 .box{
-  box-shadow: 0 -5px 0 #bebed6;
-  flex: 1;
+  align-items: center;
   align-self: stretch;
   border-radius: 50%;
+  box-shadow: 0 -5px 0 #bebed6;
   display: flex;
+  flex: 1;
   justify-content: center;
-  align-items: center;
 }
 
-
 @media (max-width: 350px){
-  .currency{
-    width: 115px;
-    height: 115px;
-    margin: 5px 10px;
+  .currency-red{
+    height: 100px;
+    width: 100px;
+    border: 10px solid #e0405c;
+  }
+  .currency-blue{
+    height: 100px;
+    width: 100px;
+    border: 10px solid #516bf4;
+  }
+  .currency-orange{
+    height: 100px;
+    width: 100px;
+    border: 10px solid #efa329;
   }
 }
