@@ -64,11 +64,17 @@ function App() {
         return "WIN";
       }
       if (housePick.name === "scissors") {
+        if (score > 0) {
+          setScore(score - 1);
+        }
         return "LOSE";
       }
     }
     if (picker.name === "rock") {
       if (housePick.name === "paper") {
+        if (score > 0) {
+          setScore(score - 1);
+        }
         return "LOSE";
       }
       if (housePick.name === "scissors") {
@@ -78,6 +84,9 @@ function App() {
     }
     if (picker.name === "scissors") {
       if (housePick.name === "rock") {
+        if (score > 0) {
+          setScore(score + 1);
+        }
         return "LOSE";
       }
       if (housePick.name === "paper") {
