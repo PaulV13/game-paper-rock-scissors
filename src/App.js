@@ -163,18 +163,8 @@ function App() {
               <div>
                 <h1>YOU {win}</h1>
                 <Button
-                  style={{
-                    width: "170px",
-                    backgroundColor: "#fff",
-                    border: "2px solid transparent",
-                    borderRadius: "6px",
-                    padding: "10px",
-                    color: "#5b6b84",
-                    fontSize: "13px",
-                    fontWeight: "700",
-                    cursor: "pointer",
-                  }}
-                  name="PLAY AGAIN"
+                  className="play-again"
+                  text="PLAY AGAIN"
                   onClick={handlePlayAgain}
                 />
               </div>
@@ -226,20 +216,7 @@ function App() {
           </div>
         )}
         <div className="btn-rules">
-          <Button
-            style={{
-              width: "80px",
-              backgroundColor: "transparent",
-              border: "2px solid #5b6b84",
-              borderRadius: "6px",
-              padding: "8px",
-              color: "#fff",
-              fontSize: "10px",
-              cursor: "pointer",
-            }}
-            name="RULES"
-            onClick={handleRules}
-          />
+          <Button className="rules-btn" text="RULES" onClick={handleRules} />
         </div>
       </>
     </div>

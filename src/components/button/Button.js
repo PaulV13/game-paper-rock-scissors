@@ -2,10 +2,10 @@ import React from "react";
 
 import "./Button.css";
 
-function Button({ onClick, name, style }) {
+function Button({ onClick, text, className }) {
   return (
     <div onClick={onClick} style={{ textAlign: "center" }}>
-      <button style={style}>{name}</button>
+      <button className={className}>{text}</button>
     </div>
   );
 }
