@@ -1,0 +1,37 @@
+.currency{
+  width: 130px;
+  height: 130px;
+  display: flex;
+  border: 15px solid rgb(81, 107, 244);
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  margin: 10px 20px;
+  cursor: pointer;
+}
+
+.default{
+  width: 130px;
+  height: 130px;
+  background-color: #192845;
+  border-radius: 50%;
+}
+
+.box{
+  box-shadow: 0 -5px 0 #bebed6;
+  flex: 1;
+  align-self: stretch;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (max-width: 350px){
+  .currency{
+    width: 115px;
+    height: 115px;
+    margin: 5px 10px;
+  }
+}
