@@ -11,6 +11,7 @@
   background-image: url(/src/assets/bg-triangle.svg);
   background-position: center 60%;
   background-repeat: no-repeat;
+  background-size: 180px;
 }
 
 section h1{
@@ -26,7 +27,6 @@ section h1{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  text-align: center; 
 }
 
 .options-currency h5{
@@ -40,17 +40,14 @@ section h1{
   flex-direction: column;
 }
 
-
-
-@media (min-width: 500px) { 
+@media (min-width: 375px) { 
   .options-currency{
-    width: 500px;
+    width: 350px;
   }  
 }
 
-@media (min-width: 980px){
+@media (min-width: 1024px){
   .rules-btn{
-    align-items: flex-end;
     display: flex;
     justify-content: flex-end;
     width:500px;
