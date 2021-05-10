@@ -6,7 +6,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
-  width: 210px;
+  width: 75%;
 }
 
 .header img{
@@ -37,12 +37,12 @@
 
 @media (min-width: 375px){
   .header{
-    width: 300px;
+    width: 60%;
   }
 }
 
 @media (min-width: 768px){
   .header{
-    width: 500px;
+    width: 40%;
   }
 }
