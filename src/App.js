@@ -61,13 +61,13 @@ function App() {
     if (picker.name === "paper") {
       if (housePick.name === "rock") {
         setScore(score + 1);
-        return "WIN";
+        return "YOU WIN";
       }
       if (housePick.name === "scissors") {
         if (score > 0) {
           setScore(score - 1);
         }
-        return "LOSE";
+        return "YOU LOSE";
       }
     }
     if (picker.name === "rock") {
@@ -75,11 +75,11 @@ function App() {
         if (score > 0) {
           setScore(score - 1);
         }
-        return "LOSE";
+        return "YOU LOSE";
       }
       if (housePick.name === "scissors") {
         setScore(score + 1);
-        return "WIN";
+        return "YOU WIN";
       }
     }
     if (picker.name === "scissors") {
@@ -87,11 +87,11 @@ function App() {
         if (score > 0) {
           setScore(score - 1);
         }
-        return "LOSE";
+        return "YOU LOSE";
       }
       if (housePick.name === "paper") {
         setScore(score + 1);
-        return "WIN";
+        return "YOU WIN";
       }
     }
   };
@@ -136,7 +136,7 @@ function App() {
             </div>
             {showWin ? (
               <div className="box-result">
-                <h1>YOU {win}</h1>
+                <h1>{win}</h1>
                 <Button
                   className="play-again"
                   text="PLAY AGAIN"
